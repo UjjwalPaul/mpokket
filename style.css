@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow-x: hidden; */
 }
 
 html,
@@ -55,6 +56,10 @@ header{
     box-shadow: red;
 }
 
+.ri-menu-line{
+ display: none;
+ font-size: 2rem;
+}
 .third button{
     padding: 10px 20px;
     border-radius: 1rem;
@@ -130,28 +135,75 @@ section{
 .right img {
     max-width: 100%; /* Ensure image doesn't overflow */
   }
+
+
+.pop-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.174);
+    backdrop-filter:blur(5px);
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+.pop-up .box {
+    width: 500px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+.box > .close{
+    position: relative;
+    right: 30px;   
+    top: -220px;
+    font-size: 20px;
+}
+
+
+
   
   /* Media Queries for Responsiveness */
   
   /* Tablet View (iPad) */
   @media (max-width: 768px) {
     .nav {
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      padding: 1rem 2rem;
     }
   
     .second ul {
+      display: none;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
     }
-  
+  .third{
+    display: none;
+  }
+  .ri-menu-line{
+    display: initial;
+  }
     section {
       flex-direction: column;
       text-align: center;
     }
   
+    .left  {
+     align-items: center;
+    }
     .left h1 {
       font-size: 2rem;
     }
@@ -174,6 +226,18 @@ section{
       gap: 0.5rem;
     }
   
+    .nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+    }
+
+ .first img{
+     width: 8rem;
+ }
+
     .second ul {
       flex-direction: column;
       align-items: center;
@@ -185,6 +249,10 @@ section{
       gap: 1rem;
     }
   
+    .left  {
+      align-items: center;
+     }
+
     .left h1 {
       font-size: 1.5rem;
     }
@@ -195,13 +263,6 @@ section{
   
     .left p {
       font-size: 0.9rem;
-    }
-  
-    .left button {
-      width: 7rem;
-      height: 2rem;
-      font-size: 1rem;
-      margin-left: 35%;
     }
   
     .right img {
